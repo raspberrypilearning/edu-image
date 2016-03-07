@@ -26,9 +26,10 @@ echo "Installing from Pip3"
 sudo pip3 install explorerhat pibrella piglow picraft requests-oauthlib pyinstaller
 sudo pip install explorerhat pibrella piglow picraft requests-oauthlib pyinstaller
 
-cd /opt
-sudo git clone https://github.com/ntoll/mu
-
+mkdir /opt/mu
+cd /opt/mu
+sudo wget https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/raspberry_pi/mu-2016-02-16_21_33_00 -O mu
+sudo chmod 755 mu
 
 echo "VNC Setup"
 
