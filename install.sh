@@ -31,6 +31,21 @@ cd /opt/mu
 sudo wget https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/raspberry_pi/mu-2016-02-16_21_33_00 -O mu
 sudo chmod 755 mu
 
+cat > vncserver.service << EOL
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/usr/bin/python3 /opt/mu/run.py
+Icon=/opt/mu/conf/mu.png
+Terminal=false
+Name=Mu for Microbit
+Comment=A micro Python editor
+Categories=Application;Development;Qt;
+EOL
+
+
 echo "VNC Setup"
 
 sed -i '/edu-install/d' /home/pi/.config/lxsession/LXDE-pi/autostart
