@@ -31,7 +31,17 @@ cd /opt/mu
 sudo wget https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/raspberry_pi/mu-2016-02-16_21_33_00 -O mu
 sudo chmod 755 mu
 
-cat > vncserver.service << EOL
+echo "VNC Setup"
+
+sed -i '/edu-install/d' /home/pi/.config/lxsession/LXDE-pi/autostart
+tightvncserver
+rm edu-install.sh
+
+EOL
+
+chmod 755 edu-install.sh
+
+cat > mu.desktop << EOL
 
 [Desktop Entry]
 Encoding=UTF-8
@@ -45,16 +55,7 @@ Comment=A micro Python editor
 Categories=Application;Development;Qt;
 EOL
 
-
-echo "VNC Setup"
-
-sed -i '/edu-install/d' /home/pi/.config/lxsession/LXDE-pi/autostart
-tightvncserver
-rm edu-install.sh
-
-EOL
-
-chmod 755 edu-install.sh
+sudo mv mu.dektop /usr/share/applications
 
 cat > vncserver.service << EOL
 [Unit]
