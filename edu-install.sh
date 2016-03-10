@@ -1,7 +1,8 @@
 set -e
 
+sleep 5
 echo "Updating"
-sleep 10
+
 
 sudo apt-get update
 sudo apt-get -y upgrade 
@@ -24,8 +25,26 @@ sudo chmod 755 mu
 
 echo "VNC Setup"
 
-sed -i '/edu-install/d' /home/pi/.config/lxsession/LXDE-pi/autostart
+
+sudo raspi-config nonint set_camera 1
+sudo raspi-config nonint do_i2c 0
+
+sudo sh -c "printf 'hdmi_group=2' >> /boot/config.txt"
+sudo sh -c "printf 'hdmi_mode=86' >> /boot/config.txt"
+
+
+sudo mv /home/pi/edu-image/mu.desktop /usr/share/applications
+sudo chmod u+x /home/pi/edu-image/vncserver.service
+sudo chown root:root /home/pi/edu-image/vncserver.service
+sudo mv /home/pi/edu-image/vncserver.service /lib/systemd/system/
+sudo ln -s /lib/systemd/system/vncserver.service /etc/systemd/system/vncserver.service
+sudo systemctl enable vncserver
+
 
 tightvncserver
 rm edu-install.sh
 echo "ALL DONE!"
+echo "Ready to Reboot"
+read
+
+sudo reboot
