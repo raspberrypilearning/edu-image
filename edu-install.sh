@@ -1,5 +1,5 @@
 set -e
-sudo sed '/git clone/d' /etc/rc.local
+sudo sed -i '/git clone/d' /etc/rc.local
 sleep 5
 echo "Updating"
 
@@ -40,7 +40,7 @@ sudo systemctl enable vncserver
 tightvncserver
 
 echo "Tidying up"
-sudo sed '/edu-install/d' /etc/rc.local
+sudo sed -i '/edu-install/d' /etc/rc.local
 
 sudo raspi-config nonint do_wait_for_network Fast
 sudo raspi-config nonint do_boot_behaviour Desktop
