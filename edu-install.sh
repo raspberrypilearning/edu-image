@@ -25,6 +25,7 @@ sudo chmod 755 mu
 echo "VNC Setup"
 
 sed -i '/edu-install/d' /home/pi/.config/lxsession/LXDE-pi/autostart
+sed -i '/https://github.com/raspberrypilearning/edu-image.git/d' /home/pi/.config/lxsession/LXDE-pi/autostart
 tightvncserver
 rm edu-install.sh
 echo "ALL DONE!"
