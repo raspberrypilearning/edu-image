@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/usr/bin/python3 /opt/mu/run.py
+Icon=/opt/mu/conf/mu.png
+Terminal=false
+Name=Mu for Microbit
+Comment=A micro Python editor
+Categories=Application;Development;Qt;
