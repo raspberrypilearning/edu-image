@@ -1,6 +1,8 @@
 set -e
+sudo raspi-config nonint set_camera 1
+sudo raspi-config nonint do_i2c 0
 sudo sed -i '/git clone/d' /etc/rc.local
-sleep 5
+
 echo "Updating"
 
 sudo apt-get update
@@ -23,11 +25,8 @@ sudo chmod 755 mu
 echo "VNC Setup"
 
 
-sudo raspi-config nonint set_camera 1
-sudo raspi-config nonint do_i2c 0
-
-sudo sh -c "printf 'hdmi_group=2' >> /boot/config.txt"
-sudo sh -c "printf 'hdmi_mode=86' >> /boot/config.txt"
+sudo sh -c "printf '\nhdmi_group=2\n' >> /boot/config.txt"
+sudo sh -c "printf 'hdmi_mode=86\n' >> /boot/config.txt"
 
 
 sudo mv /home/pi/edu-image/mu.desktop /usr/share/applications
