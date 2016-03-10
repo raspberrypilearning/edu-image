@@ -61,7 +61,7 @@ Comment=A micro Python editor
 Categories=Application;Development;Qt;
 EOL
 
-sudo mv mu.dektop /usr/share/applications
+sudo mv mu.desktop /usr/share/applications
 
 cat > vncserver.service << EOL
 [Unit]
