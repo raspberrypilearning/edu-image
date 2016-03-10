@@ -6,6 +6,7 @@ sudo raspi-config nonint do_i2c 0
 
 sudo sh -c "printf '@lxterminal -e \"git clone https://github.com/raspberrypilearning/edu-image.git && sudo reboot\"' >> .config/lxsession/LXDE-pi/autostart"
 sudo sh -c "printf '@lxterminal -e \"/home/pi/edu-image/edu-install.sh\"' >> .config/lxsession/LXDE-pi/autostart"
+sudo sh -c "printf '@lxterminal -e \"sed sh -c "printf '@lxterminal -e \"-i '/https://github.com/raspberrypilearning/edu-image.git/d' /home/pi/.config/lxsession/LXDE-pi/autostart\"' >> .config/lxsession/LXDE-pi/autostart"
 sudo sh -c "printf 'hdmi_group=2' >> /boot/config.txt"
 sudo sh -c "printf 'hdmi_mode=86' >> /boot/config.txt"
 git clone https://github.com/raspberrypilearning/edu-image.git
