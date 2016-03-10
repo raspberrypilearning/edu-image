@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "Raspi-Config steps"
-sudo raspi-config nonint do_expand_rootfs
+
 sudo raspi-config nonint set_camera 1
 sudo raspi-config nonint do_i2c 0
 
