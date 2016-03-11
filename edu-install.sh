@@ -36,6 +36,7 @@ sleep 5
 cd /opt/
 sudo git clone https://github.com/ntoll/mu.git
 sudo mv /home/pi/edu-image/mu.desktop /usr/share/applications
+sudo chown root:root /usr/share/applications/mu.desktop
 
 echo "Configuring VNC"
 echo "================="
