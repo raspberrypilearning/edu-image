@@ -52,7 +52,7 @@ tightvncserver
 echo "Tidying up"
 echo "=========="
 sudo sed -i '/edu-install/d' /etc/rc.local
-
+sudo sed -i '/sleep/d' /etc/rc.local
 sudo raspi-config nonint do_wait_for_network Fast
 sudo raspi-config nonint do_boot_behaviour Desktop
 
