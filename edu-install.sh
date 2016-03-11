@@ -33,9 +33,8 @@ sudo pip install explorerhat pibrella piglow picraft requests-oauthlib pyinstall
 echo "Installing Mu"
 echo "============="
 sleep 5
-sudo mkdir /opt/mu
-cd /opt/mu
-sudo wget https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/raspberry_pi/mu-2016-02-16_21_33_00 -O mu
+cd /opt/
+sudo git clone https://github.com/ntoll/mu.git
 sudo chmod 755 mu
 sudo mv /home/pi/edu-image/mu.desktop /usr/share/applications
 
@@ -47,7 +46,6 @@ sudo chown root:root /home/pi/edu-image/vncserver.service
 sudo mv /home/pi/edu-image/vncserver.service /lib/systemd/system/
 sudo ln -s /lib/systemd/system/vncserver.service /etc/systemd/system/vncserver.service
 sudo systemctl enable vncserver
-tightvncserver
 
 echo "Tidying up"
 echo "=========="
@@ -58,6 +56,6 @@ sudo raspi-config nonint do_boot_behaviour Desktop
 
 rm -rf /home/pi/edu-image
 echo "ALL DONE!"
-echo "Rebooting..."
-sleep 5
-sudo reboot
+echo "The final step is to set a vnc password and then reboot (you do not need a view only password)
+
+tightvncserver
