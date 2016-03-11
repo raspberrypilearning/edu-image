@@ -55,6 +55,6 @@ sudo raspi-config nonint do_boot_behaviour Desktop
 
 rm -rf /home/pi/edu-image
 echo "ALL DONE!"
-echo "The final step is to set a vnc password and then reboot (you do not need a view only password)
+echo "The final step is to set a vnc password and then reboot (you do not need a view only password)"
 
 tightvncserver
