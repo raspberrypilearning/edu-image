@@ -35,7 +35,6 @@ echo "============="
 sleep 5
 cd /opt/
 sudo git clone https://github.com/ntoll/mu.git
-sudo chmod 755 mu
 sudo mv /home/pi/edu-image/mu.desktop /usr/share/applications
 
 echo "Configuring VNC"
