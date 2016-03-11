@@ -33,7 +33,7 @@ sudo pip install explorerhat pibrella piglow picraft requests-oauthlib pyinstall
 echo "Installing Mu"
 echo "============="
 sleep 5
-mkdir /opt/mu
+sudo mkdir /opt/mu
 cd /opt/mu
 sudo wget https://s3-us-west-2.amazonaws.com/ardublockly-builds/microbit/raspberry_pi/mu-2016-02-16_21_33_00 -O mu
 sudo chmod 755 mu
