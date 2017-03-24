@@ -15,6 +15,8 @@ sudo rpi-update
 echo "Installing from apt"
 sudo apt-get install -y vim python3-codebug-i2c-tether python3-codebug-tether mu gnome-schedule
 
+echo "Installing from deb"
+sudo dpkg -i thonny_0.1_all.deb
 
 echo "Installing from Pip3"
 sudo pip3 install explorerhat pibrella piglow requests-oauthlib pyinstaller python-sonic pyflakes pep8
