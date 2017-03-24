@@ -45,5 +45,9 @@ sudo apt-get install -y python-numpy python-wxversion libwxbase3.0-0 libwxgtk3.0
 sudo dpkg -i crumble_0.25.1_all.deb 
 rm crumble_0.25.1_all.deb
 
+sudo mv cmdline.txt /boot
+sudo mv resize2fs_once /etc/init.d/
+sudo ln -s /etc/init.d/resize2fs_once /etc/rc3.d/S01resize2fs_once
+
 echo "Complete, ready to halt"
 read
