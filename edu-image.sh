@@ -1,7 +1,7 @@
 #!/bin/sh
 wget https://github.com/raspberrypilearning/edu-image/blob/master/thonny_0.1_all.deb
-wget https://github.com/raspberrypilearning/edu-image/blob/master/cmdline.txt
-wget https://github.com/raspberrypilearning/edu-image/blob/master/resize2fs_once
+wget https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt
+wget https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/resize2fs_once
 
 read
 
