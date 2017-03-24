@@ -3,7 +3,9 @@ wget https://github.com/raspberrypilearning/edu-image/blob/master/thonny_0.1_all
 wget https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt
 wget https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/resize2fs_once
 
-read
+echo "pause"
+read x
+
 
 echo "Raspi-Config steps"
 sudo raspi-config nonint do_camera 0
@@ -18,7 +20,8 @@ sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo rpi-update
 
-read
+echo "pause"
+read x
 
 echo "Installing from apt"
 sudo apt-get install -y vim python3-codebug-i2c-tether python3-codebug-tether mu gnome-schedule
@@ -26,7 +29,9 @@ sudo apt-get install -y vim python3-codebug-i2c-tether python3-codebug-tether mu
 echo "Installing from deb"
 sudo dpkg -i thonny_0.1_all.deb
 
-read
+echo "pause"
+read x
+
 
 echo "Installing from Pip3"
 sudo pip3 install explorerhat pibrella piglow requests-oauthlib pyinstaller python-sonic pyflakes pep8
@@ -37,7 +42,9 @@ git clone https://github.com/mu-editor/mu.git
 sudo rm -rf /usr/lib/python3/dist-packages/mu/*
 sudo cp -R ~/mu/mu/* /usr/lib/python3/dist-packages/mu/
 
-read
+echo "pause"
+read x
+
 
 echo "Installing Crumble"
 wget http://redfernelectronics.co.uk/?ddownload=3869 -O crumble_0.25.1_all.deb
@@ -50,4 +57,6 @@ sudo mv resize2fs_once /etc/init.d/
 sudo ln -s /etc/init.d/resize2fs_once /etc/rc3.d/S01resize2fs_once
 
 echo "Complete, ready to halt"
-read
+echo "pause"
+read x
+
