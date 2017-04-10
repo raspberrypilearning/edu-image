@@ -52,7 +52,17 @@ sudo apt-get install -y python-numpy python-wxversion libwxbase3.0-0 libwxgtk3.0
 sudo dpkg -i crumble_0.25.1_all.deb 
 rm crumble_0.25.1_all.deb
 
-sudo mv cmdline.txt /boot
+## UNTESTED - PLEASE TEST THIS
+## make a dir and mount the boot partition
+sudo mkdir /home/pi/boot_part
+sudo mount /dev/mmcblk0p1 /home/pi/boot_part
+## copy cmdline.txt to boot parttition
+sudo mv cmdline.txt /home/pi/boot_part/.
+
+##unount and remove the dir
+sudo umount /home/pi/boot_part
+sudo rm -r /home/pi/boot_part
+
 sudo mv resize2fs_once /etc/init.d/
 sudo ln -s /etc/init.d/resize2fs_once /etc/rc3.d/S01resize2fs_once
 
