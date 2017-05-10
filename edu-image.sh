@@ -34,9 +34,10 @@ sudo dpkg -i crumble_0.25.1_all.deb
 rm crumble_0.25.1_all.deb
 
 echo "Setting up Resize"
-sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/
+sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
 
-sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/resize2fs_once -O /etc/rc3.d/S01resize2fs_once
+sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/resize2fs_once -O /etc/init.d/resize2fs_once
+sudo chmod 755 /etc/init.d/resize2fs_once
 sudo ln -s /etc/init.d/resize2fs_once /etc/rc3.d/S01resize2fs_once
 
 
