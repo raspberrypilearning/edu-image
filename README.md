@@ -9,9 +9,9 @@
     git clone git@github.com:raspberrypilearning/edu-image.git
     ```
 1. Unmount both partitions. 
-1Run resize.sh to reduce partition size.
+1. Run resize.sh to reduce partition size.
     ```
     cd edu-image
     ./resize.sh
     ```
-1 A backup of the image will be created in ~/backups that can be used to create new cards if needed.
+1. A backup of the image will be created in ~/backups that can be used to create new cards if needed.
