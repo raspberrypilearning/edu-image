@@ -14,12 +14,12 @@ sudo apt-get -qqy dist-upgrade
 sudo rpi-update
 
 echo "Installing from apt"
-sudo apt-get install -qqy mu gnome-schedule #vim python3-codebug-i2c-tether python3-codebug-tether
+sudo apt-get install -qqy mu gnome-schedule
 
 echo "Installing from deb"
 
 echo "Installing from Pip3"
-sudo pip3 -q install explorerhat pibrella piglow requests-oauthlib pyinstaller #python-sonic pyflakes pep8
+sudo pip3 -q install explorerhat pibrella piglow requests-oauthlib pyinstaller pyflakes pep8 codebug-i2c-tether codebug-tether
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
 
 echo "Installing Mu"
@@ -29,13 +29,13 @@ sudo cp -R ~/mu/mu/* /usr/lib/python3/dist-packages/mu/
 
 echo "Installing Crumble"
 wget -q http://redfernelectronics.co.uk/?ddownload=3869 -O crumble_0.25.1_all.deb
-sudo apt-get install -qqy python-numpy python-wxversion libwxbase3.0-0 libwxgtk3.0-0 python-wxgtk3.0 python-pyparsing python-cairo libhidapi-libusb0
+sudo apt-get install -qqy python-numpy python-wxversion python-wxgtk3.0 python-pyparsing python-cairo libhidapi-libusb0
 sudo dpkg -i crumble_0.25.1_all.deb 
 rm crumble_0.25.1_all.deb
 
 echo "Setting Wallpaper"
-wget https://github.com/raspberrypilearning/edu-image/raw/master/picademy.png
-sudo mv picademy.png /usr/share/rpd-wallpaper/
+wget https://github.com/raspberrypilearning/edu-image/raw/master/Raspbain-Desktop-Background-1366x768px.png
+sudo mv Raspbain-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/picademy.png
 sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
 echo "Setting up Resize"
