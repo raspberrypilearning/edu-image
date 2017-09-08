@@ -40,7 +40,8 @@ then
 		targetpart="${myblkdev}${targetpartnr}"
 	else
 		targetpart="${myblkdev}p${targetpartnr}"
-
+	fi
+fi
 # Unmount directories, otherwise online shrinking from resize2fs would be
 # required but this throws an error.
 if grep -s "${myblkdev}" /proc/mounts
