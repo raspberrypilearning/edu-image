@@ -4,6 +4,7 @@ echo "Raspi-Config steps"
 sudo raspi-config nonint do_camera 0
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_vnc 0
+sudo raspi-config nonint do_ssh 0
 
 echo "Updating...."
 sleep 2
@@ -19,7 +20,7 @@ sudo apt-get install -qqy gnome-schedule
 echo "Installing from deb"
 
 echo "Installing from Pip3"
-sudo pip3 -q install explorerhat pibrella piglow requests-oauthlib pyinstaller pyflakes pep8 codebug-i2c-tether codebug-tether
+sudo pip3 -q install python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
 
 echo "Installing Crumble"
