@@ -37,7 +37,7 @@ sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.co
 echo "Installing Mu"
 git clone https://ithub.com/mu-editor/mu.git
 
-sudo apt install python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-pyqt5.qtsvg python3-dev
+sudo apt install -y python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-pyqt5.qtsvg python3-dev
 cd mu
 sudo pip3 install -r requirements.txt
 cd ~/
