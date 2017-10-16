@@ -15,7 +15,7 @@ sudo apt-get -qqy dist-upgrade
 sudo rpi-update
 
 echo "Installing from apt"
-sudo apt-get install -qqy gnome-schedule
+sudo apt-get install -qqy python-numpy python-wxversion python-wxgtk3.0 python-pyparsing python-cairo libhidapi-libusb0 gnome-schedule python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-pyqt5.qtsvg python3-dev
 
 echo "Installing from deb"
 
@@ -25,7 +25,6 @@ sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller
 
 echo "Installing Crumble"
 wget -q http://redfernelectronics.co.uk/?ddownload=3869 -O crumble_0.25.1_all.deb
-sudo apt-get install -qqy python-numpy python-wxversion python-wxgtk3.0 python-pyparsing python-cairo libhidapi-libusb0
 sudo dpkg -i crumble_0.25.1_all.deb 
 rm crumble_0.25.1_all.deb
 
@@ -35,9 +34,7 @@ sudo mv Raspbain-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/pica
 sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
 echo "Installing Mu"
-git clone https://ithub.com/mu-editor/mu.git
-
-sudo apt install -y python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-pyqt5.qtsvg python3-dev
+git clone https://github.com/mu-editor/mu.git
 cd mu
 sudo pip3 install -r requirements.txt
 cd ~/
