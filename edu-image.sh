@@ -36,7 +36,7 @@ sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.co
 echo "Installing Mu"
 git clone https://github.com/mu-editor/mu.git
 cd mu
-sudo pip3 install -r requirements.txt
+#sudo pip3 install -r requirements.txt
 cd ~/
 
 echo "Setting up Resize"
