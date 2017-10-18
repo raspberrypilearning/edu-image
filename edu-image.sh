@@ -33,11 +33,12 @@ wget https://github.com/raspberrypilearning/edu-image/raw/master/Raspbain-Deskto
 sudo mv Raspbain-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/picademy.png
 sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
-#echo "Installing Mu"
-#git clone https://github.com/mu-editor/mu.git
-#cd mu
-#sudo pip3 install -r requirements.txt
-#cd ~/
+echo "Installing Mu"
+git clone https://github.com/mu-editor/mu.git
+cd mu
+sudo pip3 install -r requirements_pi.txt
+sudo python3 setup.py install
+cd ~/
 
 echo "Setting up Resize"
 sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
