@@ -35,17 +35,20 @@ sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.co
 
 echo "Installing Mu"
 git clone https://github.com/mu-editor/mu.git
-cd mu
+mv mu .mu
+cd .mu
 sudo pip3 install -r requirements_pi.txt
 sudo python3 setup.py install
+sed -i -e 's#Exec=mu#Exec=/home/pi/.mu/run.py#g' conf/mu.desktop
+sudo cp conf/mu.desktop /usr/share/applications/
+sudo cp conf/mu.png /usr/share/pixmaps/
 cd ~/
 
 echo "Setting up Resize"
 sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
-
-sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/resize2fs_once -O /etc/init.d/resize2fs_once
-sudo chmod 755 /etc/init.d/resize2fs_once
-#sudo ln -s /etc/init.d/resize2fs_once /etc/rc3.d/S01resize2fs_once
+sudo wget -O /etc/init.d/resize2fs_once https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
+sudo chmod +x /etc/init.d/resize2fs_once
+sudo systemctl enable resize2fs_once
 
 
 echo "Complete, ready to halt. Type 'sudo halt' and then compress image in another machine."
