@@ -15,7 +15,7 @@ sudo apt-get -qqy dist-upgrade
 sudo rpi-update
 
 echo "Installing from apt"
-sudo apt-get install -qqy python-numpy python-wxversion python-wxgtk3.0 python-pyparsing python-cairo libhidapi-libusb0 gnome-schedule python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-pyqt5.qtsvg python3-dev
+sudo apt-get install -qqy python-numpy python-wxversion python-wxgtk3.0 python-pyparsing python-cairo libhidapi-libusb0 gnome-schedule python3-pyqt5 python3-pyqt5.qsci python3-pyqt5.qtserialport python3-pyqt5.qtsvg python3-dev libav-tools ffmpeg
 
 echo "Installing from deb"
 
