@@ -40,5 +40,5 @@ sudo chmod +x /etc/init.d/resize2fs_once
 sudo systemctl enable resize2fs_once
 
 
-echo "Complete, ready to halt. Type 'sudo halt' and then compress image in another machine."
+echo "Complete, ready to halt. Type 'sudo halt' and then, if cloning, compress image in another machine."
 
