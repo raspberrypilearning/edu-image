@@ -1,5 +1,7 @@
 1. Burn the latest standard Raspian image
-1. Boot Pi from card and run the edu-image.sh script on the Pi
+1. Boot Pi from card and skip the setup.
+1. Connect to the internet
+1. Open a terminal and run the edu-image.sh script on the Pi
     ```
     wget --no-check-certificate -O - http://rpf.io/picademy-image | bash
     ```
