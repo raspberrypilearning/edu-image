@@ -32,8 +32,16 @@ echo "The following filesystems have been found:"
 lsblk
 read -e -p "Which blockdevice: " -i "mmcblk0" myblkdev
 read -e -p "Which partition do you want to shrink: " -i "2" targetpartnr
-targetpart="${myblkdev}p${targetpartnr}"
-
+if [ -e /etc/os-release ]
+then
+	echo 'os-release found'
+	if grep -q Raspbian /etc/os-release; then
+		echo 'Looks like this is Raspbian'
+		targetpart="${myblkdev}${targetpartnr}"
+	else
+		targetpart="${myblkdev}p${targetpartnr}"
+	fi
+fi
 # Unmount directories, otherwise online shrinking from resize2fs would be
 # required but this throws an error.
 if grep -s "${myblkdev}" /proc/mounts

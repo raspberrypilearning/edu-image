@@ -16,4 +16,7 @@
     cd edu-image
     ./resize.sh
     ```
-1. A backup of the image will be created in ~/backups that can be used to create new cards if needed.
+1. A backup of the image will be created in ~/backups that can be used to create new cards if needed. If you're running this script on a Pi or a Desktop running Raspbian, then you'll need to install pv first: 
+	``` bash
+	sudo apt-get install pv
+	```
