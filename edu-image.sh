@@ -10,6 +10,7 @@ echo "Updating...."
 sleep 2
 
 sudo apt-get -qq update
+sudo apt-get -qq purge wolram-engine wolframscript
 sudo apt-get -qqy upgrade 
 sudo apt-get -qqy dist-upgrade
 sudo rpi-update
