@@ -25,6 +25,7 @@ sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller
 
 echo "Installing Crumble"
 wget -q http://redfernelectronics.co.uk/?ddownload=3869 -O crumble_0.25.1_all.deb
+sudo apt-get install -qqy python-wxversion libwxbase3.0-0v5 libwxgtk3.0-0v5 python-wxgtk3.0 python-pyparsing libhidapi-libusb0
 sudo dpkg -i crumble_0.25.1_all.deb 
 rm crumble_0.25.1_all.deb
 
