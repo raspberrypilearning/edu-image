@@ -13,7 +13,6 @@ sudo apt-get -qq update
 sudo apt-get -qq purge wolram-engine wolframscript
 sudo apt-get -qqy upgrade 
 sudo apt-get -qqy dist-upgrade
-sudo rpi-update
 
 echo "Installing from apt"
 sudo apt-get install -qqy mu python-numpy gnome-schedule libav-tools ffmpeg
