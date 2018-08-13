@@ -14,6 +14,8 @@
 1. Run resize.sh to reduce partition size.
     ```
     cd edu-image
-    ./resize.sh
+    ./resize.sh 
     ```
+    
+    (Resize may need to run twice??)
 1. A backup of the image will be created in ~/backups that can be used to create new cards if needed.
