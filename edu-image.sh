@@ -20,7 +20,7 @@ sudo apt-get install -qqy python-numpy python-wxversion python-wxgtk3.0 python-p
 echo "Installing from deb"
 
 echo "Installing from Pip3"
-sudo pip3 -q install python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether
+sudo pip3 -q install python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether guizero
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
 
 echo "Installing Crumble"
@@ -34,15 +34,7 @@ sudo mv Raspbain-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/pica
 sed -i -e 's/road.jpg/picademy.png/g' .config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
 echo "Installing Mu"
-git clone https://github.com/mu-editor/mu.git
-mv mu .mu
-cd .mu
-sudo pip3 install -r requirements_pi.txt
-sudo python3 setup.py install
-sed -i -e 's#Exec=mu#Exec=/home/pi/.mu/run.py#g' conf/mu.desktop
-sudo cp conf/mu.desktop /usr/share/applications/
-sudo cp conf/mu.png /usr/share/pixmaps/
-cd ~/
+sudo apt-get install mu
 
 echo "Setting up Resize"
 sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
