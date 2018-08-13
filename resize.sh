@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/run/current-system/sw/bin/bash -e
 #######!/bin/bash -ex # The x is to be used for debugging.
 
 #------------------------------------------------------------------------------
@@ -33,13 +33,16 @@ lsblk
 read -e -p "Which blockdevice: " -i "mmcblk0" myblkdev
 read -e -p "Which partition do you want to shrink: " -i "2" targetpartnr
 targetpart="${myblkdev}p${targetpartnr}"
+echo ${myblkdev}
+echo ${targetpartnr}
+echo ${targetpart}
 
 # Unmount directories, otherwise online shrinking from resize2fs would be
 # required but this throws an error.
 if grep -s "${myblkdev}" /proc/mounts
 then
    echo "Start unmounting partitions"
-   sudo umount -v "/dev/${myblkdev}"? # Questionmark is wildcard.
+   sudo umount -v "/dev/${myblkdev}"* # Questionmark is wildcard.
 fi
 
 # Check the filesystem/partition.
