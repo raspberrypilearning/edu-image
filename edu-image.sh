@@ -34,11 +34,11 @@ wget https://github.com/raspberrypilearning/edu-image/raw/master/Raspbain-Deskto
 sudo mv Raspbain-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/picademy.png
 sudo sed -i -e 's/road.jpg/picademy.png/g' /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf
 
-echo "Setting up Resize"
-sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
-sudo wget -O /etc/init.d/resize2fs_once https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
-sudo chmod +x /etc/init.d/resize2fs_once
-sudo systemctl enable resize2fs_once
+#echo "Setting up Resize"
+#sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
+#sudo wget -O /etc/init.d/resize2fs_once https://github.com/RPi-Distro/pi-gen/raw/dev/stage2/01-sys-tweaks/files/resize2fs_once
+#sudo chmod +x /etc/init.d/resize2fs_once
+#sudo systemctl enable resize2fs_once
 
 
 echo "Complete, ready to halt. Type 'sudo halt' and then, if cloning, compress image in another machine."
