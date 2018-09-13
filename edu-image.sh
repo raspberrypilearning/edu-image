@@ -30,8 +30,8 @@ sudo dpkg -i crumble_0.25.1_all.deb
 rm crumble_0.25.1_all.deb
 
 echo "Setting Wallpaper"
-wget https://github.com/raspberrypilearning/edu-image/raw/master/Raspbain-Desktop-Background-1366x768px.png
-sudo mv Raspbain-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/picademy.png
+wget https://github.com/raspberrypilearning/edu-image/raw/master/Raspbian-Desktop-Background-1366x768px.png
+sudo mv Raspbian-Desktop-Background-1366x768px.png /usr/share/rpd-wallpaper/picademy.png
 sudo sed -i -e 's/road.jpg/picademy.png/g' /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf
 
 #echo "Setting up Resize"
