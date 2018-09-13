@@ -1,19 +1,3 @@
-#!/run/current-system/sw/bin/bash -e
-#######!/bin/bash -ex # The x is to be used for debugging.
-
-#------------------------------------------------------------------------------
-#
-#  9 may 2016, backuPi.sh 
-# 
-#
-#  Calculates the minimum size of the sd card, and then resizes filesystem
-#  and partition.
-#  Subsequently creates an image of the relevant partitions space.
-#
-#
-#
-#------------------------------------------------------------------------------
-
 function calcMiB()
 {
    # Calculate size in MiB, for easier reading.
@@ -30,9 +14,9 @@ function calcMiB()
 echo "Please select the drive you want to format and write an image to."
 echo "The following filesystems have been found:"
 lsblk
-read -e -p "Which blockdevice: " -i "mmcblk0" myblkdev
-read -e -p "Which partition do you want to shrink: " -i "2" targetpartnr
-targetpart="${myblkdev}p${targetpartnr}"
+myblkdev="sdb"
+targetpartnr=2
+targetpart="${myblkdev}${targetpartnr}"
 echo ${myblkdev}
 echo ${targetpartnr}
 echo ${targetpart}
