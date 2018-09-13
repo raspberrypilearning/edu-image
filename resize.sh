@@ -108,6 +108,6 @@ then
    mkdir -p ~/backups
    read -e -p "Filename :" -i "$(date +%g%m%d)-raspbianbackup.img" Pibackupname
    sudo dd if="/dev/${myblkdev}" | pv | sudo dd of=~/backups/"${Pibackupname}" bs=512 count="${mynewendpoint}"
-   echo "Backup succesfull."
+   echo "Backup successful."
 fi
 exit
