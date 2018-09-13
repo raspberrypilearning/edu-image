@@ -15,11 +15,9 @@ sudo apt-get -qqy upgrade
 sudo apt-get -qqy dist-upgrade
 
 echo "Installing from apt"
-sudo apt-get install -qqy mu python-numpy gnome-schedule libav-tools ffmpeg
+sudo apt-get install -qqy mu gnome-schedule libav-tools ffmpeg
 
-echo "Installing from deb"
-
-echo "Installing from Pip3"
+echo "Installing from pip3"
 sudo pip3 -q install pigps guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
 
