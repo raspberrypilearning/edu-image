@@ -30,14 +30,16 @@ rm crumble_0.25.1_all.deb
 echo "Setting Wallpaper"
 desktop_background=https://github.com/raspberrypilearning/edu-image/raw/master/Raspbian-Desktop-Background-1366x768px.png
 sudo wget $desktop_background -O /usr/share/rpd-wallpaper/picademy.png
+mkdir -p /home/pi/.config/pcmanfm/LXDE-pi/
+cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/
 sed -i -e 's/road.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 sudo systemctl restart lightdm
 
-#echo "Setting up Resize"
-#sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
-#sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
-#sudo chmod +x /etc/init.d/resize2fs_once
-#sudo systemctl enable resize2fs_once
+echo "Setting up Resize"
+sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
+sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
+sudo chmod +x /etc/init.d/resize2fs_once
+sudo systemctl enable resize2fs_once
 
 
 echo "Complete, ready to halt. Type 'sudo halt' and then, if cloning, compress image in another machine."
