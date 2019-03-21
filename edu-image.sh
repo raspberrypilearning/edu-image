@@ -10,12 +10,12 @@ echo "Updating...."
 sleep 2
 
 sudo apt-get -qq update
-sudo apt-get -qq purge wolfram-engine wolframscript
+sudo apt-get -qq purge wolfram-engine wolframscript geany
 sudo apt-get -qqy upgrade 
 sudo apt-get -qqy dist-upgrade
 
 echo "Installing from apt"
-sudo apt-get install -qqy mu gnome-schedule libav-tools ffmpeg
+sudo apt-get install -qqy mu gnome-schedule libav-tools ffmpeg sonic-pi
 
 echo "Installing from pip3"
 sudo pip3 -q install pigps guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
