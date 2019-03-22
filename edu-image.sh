@@ -33,8 +33,6 @@ sudo wget $desktop_background -O /usr/share/rpd-wallpaper/picademy.png
 mkdir -p /home/pi/.config/pcmanfm/LXDE-pi/
 cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/
 sed -i -e 's/road.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
-sudo systemctl restart lightdm
-
 sed -i -e 's/mounts=0/mounts=1/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
 echo "Setting up Resize"
