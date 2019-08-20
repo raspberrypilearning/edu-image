@@ -18,8 +18,8 @@ sudo apt-get -qqy upgrade
 sudo apt-get -qqy dist-upgrade
 
 echo "Installing from apt"
-sudo apt-get install -qqy mu gnome-schedule libav-tools ffmpeg scratch3 sonic-pi sonic-pi-server sonic-pi-samples
-
+sudo apt-get install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples
+#mu gnome-schedule libav-tools ffmpeg
 echo "Installing from pip3"
 sudo pip3 -q install pigps guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
@@ -35,14 +35,14 @@ desktop_background=https://github.com/raspberrypilearning/edu-image/raw/master/R
 sudo wget $desktop_background -O /usr/share/rpd-wallpaper/picademy.png
 mkdir -p /home/pi/.config/pcmanfm/LXDE-pi/
 cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/
-sed -i -e 's/road.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
+sed -i -e 's/temple.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 sed -i -e 's/mounts=0/mounts=1/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
-#echo "Setting up Resize"
-#sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
-#sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
-#sudo chmod +x /etc/init.d/resize2fs_once
-#sudo systemctl enable resize2fs_once
+echo "Setting up Resize"
+sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
+sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
+sudo chmod +x /etc/init.d/resize2fs_once
+sudo systemctl enable resize2fs_once
 
 
 echo "Complete, ready to halt. Type 'sudo halt' and then, if cloning, compress image in another machine."
