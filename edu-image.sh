@@ -5,7 +5,7 @@ sudo raspi-config nonint do_camera 0
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_vnc 0
 sudo raspi-config nonint do_ssh 0
-
+echo "AUGUST"
 echo "Updating...."
 sleep 2
 
@@ -38,11 +38,11 @@ cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-p
 sed -i -e 's/road.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 sed -i -e 's/mounts=0/mounts=1/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
-echo "Setting up Resize"
-sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
-sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
-sudo chmod +x /etc/init.d/resize2fs_once
-sudo systemctl enable resize2fs_once
+#echo "Setting up Resize"
+#sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
+#sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
+#sudo chmod +x /etc/init.d/resize2fs_once
+#sudo systemctl enable resize2fs_once
 
 
 echo "Complete, ready to halt. Type 'sudo halt' and then, if cloning, compress image in another machine."
