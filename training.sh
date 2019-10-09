@@ -9,7 +9,7 @@ echo "AUGUST"
 echo "Updating...."
 sleep 2
 
-echo 'deb http://plugwash.raspbian.org/sonic-pi buster-sonicpi main ' | sudo tee -a /etc/apt/sources.list
+#echo 'deb http://plugwash.raspbian.org/sonic-pi buster-sonicpi main ' | sudo tee -a /etc/apt/sources.list
 
 
 sudo apt-get -qq update
@@ -18,10 +18,9 @@ sudo apt-get -qqy upgrade
 sudo apt-get -qqy dist-upgrade
 
 echo "Installing from apt"
-sudo apt-get install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples
-#mu gnome-schedule libav-tools ffmpeg
+sudo apt-get install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples mu-editor gnome-schedule libav-tools ffmpeg
 echo "Installing from pip3"
-sudo pip3 -q install pigps guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
+sudo pip3 -q install pigps bluedot guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
 
 #echo "Installing Crumble"
