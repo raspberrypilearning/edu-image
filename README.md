@@ -5,6 +5,10 @@
     ```
     wget --no-check-certificate -O - http://rpf.io/picademy-image | bash
     ```
+    or
+    ```
+    wget --no-check-certificate -O - http://rpf.io/bytes-image | bash
+    ```
 1. Remove the card and place in **linux** laptop, mount both boot and main partitions 
 1. Clone this repo to the linux machine
     ```
