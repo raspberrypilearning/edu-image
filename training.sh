@@ -18,7 +18,7 @@ sudo apt-get -qqy upgrade
 sudo apt-get -qqy dist-upgrade
 
 echo "Installing from apt"
-sudo apt-get install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples mu-editor gnome-schedule libav-tools ffmpeg
+sudo apt install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples mu-editor ffmpeg
 echo "Installing from pip3"
 sudo pip3 -q install pigps bluedot guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
