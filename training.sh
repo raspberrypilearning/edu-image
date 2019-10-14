@@ -32,9 +32,9 @@ sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller
 echo "Setting Wallpaper"
 desktop_background=https://github.com/raspberrypilearning/edu-image/raw/master/Raspbian-Desktop-Background-1366x768px.png
 sudo wget $desktop_background -O /usr/share/rpd-wallpaper/picademy.png
-cp /usr/share/applications/ sonic-pi.desktop ~/Desktop/
-cp /usr/share/applications/ mu.codewith.editor.desktop ~/Desktop/
-cp /usr/share/applications/ scratch3.desktop ~/Desktop/
+cp /usr/share/applications/ sonic-pi.desktop /home/pi/Desktop/
+cp /usr/share/applications/ mu.codewith.editor.desktop /home/pi/Desktop/
+cp /usr/share/applications/ scratch3.desktop /home/pi/Desktop/
 mkdir -p /home/pi/.config/pcmanfm/LXDE-pi/
 cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/
 sed -i -e 's/temple.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
