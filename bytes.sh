@@ -18,7 +18,7 @@ sudo apt-get -qqy upgrade
 sudo apt-get -qqy dist-upgrade
 
 echo "Installing from apt"
-sudo apt-get install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples mu-editor gnome-schedule libav-tools ffmpeg
+sudo apt install -qqy  scratch3 sonic-pi sonic-pi-server sonic-pi-samples mu-editor ffmpeg
 echo "Installing from pip3"
 sudo pip3 -q install pigps bluedot guizero twython python-osc explorerhat pibrella piglow requests-oauthlib pyinstaller codebug-i2c-tether codebug-tether --upgrade
 sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller 
@@ -32,12 +32,15 @@ sudo pip -q install explorerhat pibrella piglow requests-oauthlib pyinstaller
 echo "Setting Wallpaper"
 desktop_background=https://github.com/raspberrypilearning/edu-image/raw/master/Raspbian-Desktop-Background-1366x768px.png
 sudo wget $desktop_background -O /usr/share/rpd-wallpaper/picademy.png
+cp /usr/share/applications/ sonic-pi.desktop /home/pi/Desktop/
+cp /usr/share/applications/ mu.codewith.editor.desktop /home/pi/Desktop/
+cp /usr/share/applications/ scratch3.desktop /home/pi/Desktop/
 mkdir -p /home/pi/.config/pcmanfm/LXDE-pi/
 cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/
 sed -i -e 's/temple.jpg/picademy.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 sed -i -e 's/mounts=0/mounts=1/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
 
-echo "Setting up Resize"
+#echo "Setting up Resize"
 sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
 sudo wget -O /etc/init.d/resize2fs_once https://raw.githubusercontent.com/RPi-Distro/pi-gen/master/stage2/01-sys-tweaks/files/resize2fs_once
 sudo chmod +x /etc/init.d/resize2fs_once
