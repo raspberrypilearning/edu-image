@@ -20,11 +20,11 @@ echo "Installing from pip3"
 sudo pip3 -q install bluedot guizero twython python-osc explorerhat --upgrade
 
 echo "Setting Wallpaper"
-desktop_background=https://github.com/raspberrypilearning/edu-image/raw/master/Bytes.png
+desktop_background=https://github.com/raspberrypilearning/edu-image/raw/master/bytes.png
 sudo wget $desktop_background -O /usr/share/rpd-wallpaper/bytes.png
-cp /usr/share/applications/ sonic-pi.desktop /home/pi/Desktop/
-cp /usr/share/applications/ mu.codewith.editor.desktop /home/pi/Desktop/
-cp /usr/share/applications/ scratch3.desktop /home/pi/Desktop/
+cp /usr/share/applications/sonic-pi.desktop /home/pi/Desktop/
+cp /usr/share/applications/mu.codewith.editor.desktop /home/pi/Desktop/
+cp /usr/share/applications/scratch3.desktop /home/pi/Desktop/
 mkdir -p /home/pi/.config/pcmanfm/LXDE-pi/
 cp /etc/xdg/pcmanfm/LXDE-pi/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/
 sed -i -e 's/temple.jpg/bytes.png/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf
