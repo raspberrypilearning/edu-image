@@ -33,7 +33,7 @@ sed -i -e 's/mounts=0/mounts=1/g' /home/pi/.config/pcmanfm/LXDE-pi/desktop-items
 echo "Adding Resources"
 resources=https://github.com/raspberrypilearning/edu-image/raw/master/bytes-resources.zip
 wget $resources -O ~/Desktop/resources.zip
-unzip ~/Desktop/resources.zip
+unzip ~/Desktop/resources.zip -d ~/Desktop
 rm ~/Desktop/resources.zip
 
 #echo "Setting up Resize"
