@@ -34,6 +34,7 @@ echo "Adding Resources"
 resources=https://github.com/raspberrypilearning/edu-image/raw/master/bytes-resources.zip
 wget $resources -O ~/Desktop/resources.zip
 unzip ~/Desktop/resources.zip
+rm ~/Desktop/resources.zip
 
 #echo "Setting up Resize"
 sudo wget -q https://raw.githubusercontent.com/raspberrypilearning/edu-image/master/cmdline.txt -O /boot/cmdline.txt
